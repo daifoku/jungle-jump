@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b5y46h6cy6a30"]
+
+[ext_resource type="FontFile" uid="uid://cgby5fpygt28p" path="res://assets/Kenney Thick.ttf" id="1_276te"]
+[ext_resource type="Script" uid="uid://cu6b0rlqesf4f" path="res://ui/hud.gd" id="1_546lt"]
+[ext_resource type="Texture2D" uid="uid://dxcbqx2p5il8u" path="res://assets/heart.png" id="2_546lt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ihmi"]
+font = ExtResource("1_276te")
+font_size = 48
+outline_size = 16
+outline_color = Color(0, 0, 0, 0)
+
+[node name="HUD" type="MarginContainer" unique_id=1522984293]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_546lt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1685879460]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="HBoxContainer" unique_id=1309571092]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100"
+label_settings = SubResource("LabelSettings_7ihmi")
+
+[node name="LifeCounter" type="HBoxContainer" parent="HBoxContainer" unique_id=1804222259]
+layout_mode = 2
+
+[node name="L1" type="TextureRect" parent="HBoxContainer/LifeCounter" unique_id=1879594148]
+layout_mode = 2
+texture = ExtResource("2_546lt")
+stretch_mode = 5
+
+[node name="L2" type="TextureRect" parent="HBoxContainer/LifeCounter" unique_id=1553598908]
+layout_mode = 2
+texture = ExtResource("2_546lt")
+stretch_mode = 5
+
+[node name="L3" type="TextureRect" parent="HBoxContainer/LifeCounter" unique_id=1852103872]
+layout_mode = 2
+texture = ExtResource("2_546lt")
+stretch_mode = 5
+
+[node name="L4" type="TextureRect" parent="HBoxContainer/LifeCounter" unique_id=1287350497]
+layout_mode = 2
+texture = ExtResource("2_546lt")
+stretch_mode = 5
+
+[node name="L5" type="TextureRect" parent="HBoxContainer/LifeCounter" unique_id=885848179]
+layout_mode = 2
+texture = ExtResource("2_546lt")
+stretch_mode = 5

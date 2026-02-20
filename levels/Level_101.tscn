@@ -1,0 +1,21 @@
+[gd_scene format=4 uid="uid://dwfudb5u3ijls"]
+
+[ext_resource type="PackedScene" uid="uid://bhncwxynuv4kd" path="res://levels/level_base.tscn" id="1_dx2ho"]
+[ext_resource type="PackedScene" uid="uid://dgxeioly2qa16" path="res://enemies/enemy.tscn" id="2_lwclr"]
+
+[node name="LevelBase" unique_id=1343262713 instance=ExtResource("1_dx2ho")]
+
+[node name="Sprite2D" parent="ParallaxBackground/Clouds" parent_id_path=PackedInt32Array(634585705) index="0" unique_id=903114982]
+position = Vector2(-288, -162)
+
+[node name="TML_World" parent="." index="1" unique_id=2035945152]
+tile_map_data = PackedByteArray("AAD3/wAAAAADAAEAAAD4/wAAAAABAAEAAAD5/wAAAAABAAEAAAD6/wAAAAADAAEAAAD7/wAAAAABAAEAAAD8/wAAAAADAAEAAAD9/wAAAAAFAAEAAAD//wAAAAAFAAEAAAACAAAAAAAFAAEAAAABAAAAAAADAAEAAAAAAAAAAAABAAEAAAD+/wAAAAAFAAEAAAD3//z/AQAHAAQAAAD3//3/AQAHAAUAAAD4//v/AQAIAAMAAAD4//z/AQAIAAQAAAD4//3/AQAIAAUAAAD5//r/AQAJAAIAAAD5//v/AQAJAAMAAAD5//z/AQAJAAQAAAD5//3/AQAJAAUAAAD5//7/AQAJAAYAAAD6//r/AQAKAAIAAAD6//v/AQAKAAMAAAD6//z/AQAKAAQAAAD6//3/AQAKAAUAAAD6//7/AQAKAAYAAAD6////AQAKAAcAAAD7//r/AQALAAIAAAD7//v/AQALAAMAAAD7//z/AQALAAQAAAD7//3/AQALAAUAAAD7//7/AQALAAYAAAD7////AQALAAcAAAD8//r/AQAMAAIAAAD8//v/AQAMAAMAAAD8//z/AQAMAAQAAAD8//3/AQAMAAUAAAD9//v/AQANAAMAAAD9//z/AQANAAQAAAD9//3/AQANAAUAAAD+//z/AQAOAAQAAAADAAAAAAAHAAUAAAAEAAAAAAAIAAUAAAAFAAAAAAAJAAUAAAD+////AAABAAcAAAD/////AAABAAcAAAABAP//AAABAAcAAAACAP//AAABAAcAAAA=")
+
+[node name="TML_Items" parent="." index="2" unique_id=1102885287]
+tile_map_data = PackedByteArray("AAADAP//AAAAAAAAAAD8//3/AAAAAAAAAAA=")
+
+[node name="TML_Danger" parent="." index="3" unique_id=279075551 groups=["danger"]]
+tile_map_data = PackedByteArray("AAD5////AAAJAAwAAAD8////AAAJAAwAAAD4////AAAHAAwAAAD9////AAAHAAwAAAA=")
+
+[node name="Enemy" parent="." index="6" unique_id=1616577773 instance=ExtResource("2_lwclr")]
+position = Vector2(-76, -15)

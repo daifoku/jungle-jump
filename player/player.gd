@@ -84,11 +84,19 @@ func _physics_process(delta: float) -> void:
 	if state == HURT:
 		return
 
-	for i in range(get_slide_collision_count()):
+	for i in get_slide_collision_count():
 		var collision: KinematicCollision2D = get_slide_collision(i)
 		var collider: Object = collision.get_collider()
+
 		if collider.is_in_group("danger"):
 			hurt()
+
+		if collider.is_in_group("enemies"):
+			if position.y < collider.position.y:
+				collider.take_damage()
+				velocity.y = -200
+			else:
+				hurt()
 
 	# Detect when a jump ends (move and slide's update to the is_on_floor)
 	if state == JUMP and is_on_floor():
