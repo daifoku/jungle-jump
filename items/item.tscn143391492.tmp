@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://360kasv20y5a"]
+
+[ext_resource type="Script" uid="uid://lta5k4bwber2" path="res://items/item.gd" id="1_pxpuq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_buahv"]
+load_path = "res://.godot/imported/cherry.png-a942113a989833304133bcaa5751951c.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7rtb"]
+radius = 11.0
+
+[sub_resource type="Animation" id="Animation_cd4ji"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_88lpn"]
+resource_name = "cherry"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_881i2"]
+_data = {
+&"RESET": SubResource("Animation_cd4ji"),
+&"cherry": SubResource("Animation_88lpn")
+}
+
+[node name="Item" type="Area2D" unique_id=1507026932]
+collision_mask = 2
+script = ExtResource("1_pxpuq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1220423776]
+position = Vector2(1.75, -0.25)
+scale = Vector2(1.1666666, 1.0238096)
+texture = SubResource("CompressedTexture2D_buahv")
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1008281960]
+shape = SubResource("CircleShape2D_k7rtb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1332718034]
+root_node = NodePath("../CollisionShape2D")
+libraries/ = SubResource("AnimationLibrary_881i2")
+autoplay = &"cherry"
+
+[connection signal="body_entered" from="." to="." method="_on_item_body_entered"]

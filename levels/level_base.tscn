@@ -768,4 +768,5 @@ tile_set = SubResource("TileSet_pui5h")
 [node name="HUD" parent="CanvasLayer" unique_id=1522984293 instance=ExtResource("9_p3adb")]
 
 [connection signal="score_changed" from="." to="CanvasLayer/HUD" method="update_score"]
+[connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="life_changed" from="Player" to="CanvasLayer/HUD" method="update_life"]
